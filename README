@@ -1,0 +1,117 @@
+Program: Kahoot with Eyegaze™
+Programmers: Aiden Kang, Jolie Davidson, and Mikayla Clark
+Date: Nov 15, 2019
+
+Program Explanation:
+
+    Just like the famous program, Kahoot, we are building a system where
+    users can take a quiz, survey, or poll. However, users won't be clicking
+    options; they would only be gazing at an option they want to select.
+
+    Users would have an enough time to read the question and options and have
+    time to think. After that, we will give users several seconds to just gaze at
+    the option they have selected.
+
+    We are planning to implement this by recording the x, y coordinates of their
+    gaze and average them to reduce the noise of data. 
+
+    Since the four quadrants that would represent each option would be big enough
+    to distinguish each gaze, we believe the result would be quite accurate.
+
+    It would make the interactions with the system much easier.
+
+
+Feasibility Test:
+
+    Our program changes the colors of left/right grid based on user's gaze.
+    We tried to show that we know how to use webgazer to detect user's movements
+    on screen and can associate that event with changes in the website.
+
+Link to the Interactive XD Prototype:
+
+    https://xd.adobe.com/view/336be162-e462-4a4c-672a-048c6bc6f2c7-455a/
+
+Technology Requirement/Risks:
+
+    We are using webgazer.js for our project, as well as Javascript, HTML, and CSS.
+
+    Webgazer seems pretty straightforward and easy to use, as long as the user is
+    aware of how to calibrate it; this might require some more explicit instructions
+    on our part.
+    
+    Also, because it’s not extremely accurate, we will have to keep in mind that
+    the user’s “gaze” might end up in quadrants they didn’t intend. We want near
+    100% accuracy, so it will take some testing to ensure the program’s
+    user-friendly.
+
+    It seems to be that lighting is very important when the API tries to compute
+    the location of user's gaze. So if you feel like the result is not accurate,
+    try to change the lighting or switch the position of your laptop.
+    Then, instantly, the result often becomes more accurate.
+
+    Aiden and Mikayla have prior experience with Javascript, HTML, and CSS from COMP
+    20 projects; Jolie, however, is new to these languages and is excited to embrace
+    the learning curve.
+    
+    She’s currently slightly confused about how to place the quadrant objects so they
+    meet directly in the middle, because as of now she had to physically code the
+    squares to be half the screen width minus 5 more pixels, and when the browser
+    is resized, the quadrants overlap instead of just getting smaller.
+
+    We are also discussing exactly how the program will register the user’s final
+    choice; we plan to have a point where the user is told to stare directly at their
+    vote, but they know that the gaze might also point at other quadrants.
+    
+    We’ve discussed adding up all the coordinates together taken over a period of time
+    and dividing the total value by the number of coordinates taken to get an average
+    point; we also might store them in an array and find the average at the end.
+
+    Besides that, we’re excited to see where this project takes us!
+
+Design Documentation:
+
+1) Inheritance hierarchy (IS-A)
+
+    Square 
+        - UpperLeft
+        - UpperRight
+        - LowerLeft
+        - LowerRight
+        - Question
+        - Answer (displays "Correct" or "Wrong")
+
+    NumberWidget
+        - TimerToAnswer
+        - TimerToChoose
+        - TotalScore
+
+2) Aggregation hierarchy (HAS-A)
+
+    Canvas
+        - Square
+            - Text
+            - BackgroundColor (HEX value)
+            - Location
+            - BorderColor (HEX value)
+
+    NumberWidget
+        - Time (seconds) or Score
+        - BackgroundColor (HEX value)
+        - BorderColor (HEX value)
+
+3) Collaboration Relationships (USES)
+
+    TotalScore object will use results from Square to calculate how much the
+    total score is.
+
+    Each Square for answer choices could use Question Square if we want to
+    make those interconnected.
+
+
+4) Encapsulation
+    - The use of Webgazer.js inherently makes how computing eyegaze works
+        very encapsulated.
+    - When I locate each NumberWidget, I wouldn't have to consider how each
+        NumberWidgets operate
+    
+

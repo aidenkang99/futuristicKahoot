@@ -1,0 +1,73 @@
+.square{
+    position:relative;
+    font-family:Arial Black;
+    color:white;
+    text-align:center;
+    font-size:60;
+    border-color:white;
+    border-style:solid;
+    height:47.25%;
+    width:49.4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float:left;
+}
+.inside{
+    display: inline-block;
+    vertical-align: middle;
+}
+#questionContainer{
+    border-color:white;border-style:solid; vertical-align:center;
+    width:95%;
+    height:18%;
+    font-family:Arial Black;
+    color:black;
+    text-align:center;
+    font-size:40;
+    align-items: center;
+}
+#questionbar{
+    width: 65%;
+    position: relative;
+    margin: 0 auto;
+}
+
+#timer{
+    border-color:white;border-style:solid; vertical-align:center;
+    width:15%;
+    height:18%;
+    font-family:Arial Black;
+    color:black;
+    text-align:center;
+    font-size:40;
+    margin-right: 0;
+    float: left;
+    display: block;
+}
+
+#messageBar{
+    border-color:white;border-style:solid; vertical-align:center;
+    width:65%;
+    height:18%;
+    font-family:Arial Black;
+    color:black;
+    text-align:center;
+    font-size:40;
+    margin-right: 0;
+    float: left;
+    display: block;
+}
+
+#score{
+    border-color:white;border-style:solid; vertical-align:center;
+    width:15%;
+    height:18%;
+    font-family:Arial Black;
+    color:black;
+    text-align:center;
+    font-size:40;
+    margin-right: 0;
+    float: left;
+    display: block;
+}

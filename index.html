@@ -1,0 +1,67 @@
+<!--index.html-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+<TITLE>Kahoot! Woo!</TITLE>
+<link type="text/css" rel="stylesheet" href="calibration.css">
+<link type="text/css" rel="stylesheet" href="square.css">    
+<script>
+    var thisD;
+</script>
+<script src="jquery_library.js"></script>
+<script src="./webgazer.js"></script>
+</HEAD>
+<BODY>
+    <div id="instruction">
+        <p>
+            When a square appears, stare at the square while REPEATEDLY clicking it until it disappears!
+            <br \>
+            <input type="button" id="startButton" value="start" onclick="initiate()">
+        </p>
+    </div>
+    <div id="calibration">
+        <div class="section">
+            <div class="lookHere" id="here0">&nbsp;</div>
+        </div>
+        <div class="section">
+            <div class="lookHere"id="here1">&nbsp;</div>
+        </div>
+        <div class="section">
+            <div class="lookHere"id="here2">&nbsp;</div>
+        </div>
+        <div class="section">
+            <div class="lookHere"id="here3">&nbsp;</div>
+        </div>
+    </div>
+    <main style="display:none;">
+        <div id="questionContainer"><div id = "questionbar"></div></div>
+        <div class="squares" id = "4squares" style="display:table; vertical-align:middle; width:100%; height:61%;">
+            <div class="square" id = "TopLeft" style="background-color:F00000;">
+            </div>
+            <div class="square" id = "TopRight" style="background-color:00AA03;">
+            </div>
+            <div class="square" id = "BottomLeft" style="background-color:0066F0;">
+            </div>
+            <div class="square" id = "BottomRight" style="background-color:FFAA00;">
+            </div>
+        </div>
+        <div id="timer">&nbsp;</div>
+        <div class= "bar" id = "messagebar"></div>
+        <div id="score">&nbsp;</div>
+    </main>
+</BODY>
+</META>
+<script src="Coordinate.js"></script>
+<script src="SquarePos.js"></script>
+<script src="Data.js"></script>
+<script src="Square.js"></script>
+<script src="Question.js"></script>
+<script src="MessageBar.js"></script>
+<script src="GameScreen.js"></script>
+<script src="timer.js"></script>
+<script src="calibration.js"></script>
+<script src="gameStart.js"></script>
+</HTML>
